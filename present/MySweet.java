@@ -20,8 +20,8 @@ public class MySweet implements Sweet {
     private double price;
 
     public MySweet() {
-        weight = 500;
-        price = 15.89;
+        weight = 140;
+        price = 10.00;
     }
 
     public MySweet(String name, double weight, double price) {
