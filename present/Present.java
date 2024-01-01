@@ -69,7 +69,7 @@ public class Present {
     }
 
     public void removeChocolate(int num) {
-        if (num > 0 && num <= getNumOfChocolade()) {
+        if (num > 0 && num <= getNumOfChocolate()) {
             for (int i = 0; num > 0 && i < sweets.size(); i++) {
                 if (sweets.get(i).getName().equals("Dairy Milk")) {
                     sweets.remove(i);
@@ -105,7 +105,7 @@ public class Present {
         return num;
     }
 
-    public int getNumOfChocolade() {
+    public int getNumOfChocolate() {
         int num = 0;
 
         for (Sweet sweet : sweets) {
@@ -159,10 +159,18 @@ public class Present {
     }
 
     public void show() {
-        System.out.println("Total Weight: " + getTotalWeight());
-        System.out.println("Total Price: " + getTotalPrice());
+        String newLine = System.getProperty("line.separator");	
+        System.out.print("--------------------------------------" + newLine);
         System.out.println(String.format("%15s %11s %10s", "Name", "Weight", "Price"));
         System.out.println(toString());
+        System.out.println("Total Weight: " + getTotalWeight());
+        System.out.println("Total Price: " + getTotalPrice());
+        System.out.println("Total Number of Candies: " + getNumOfCandy());
+        System.out.println("Total Number of Chocolates: " + getNumOfChocolate());
+        System.out.println("Total Number of Marmalades: " + getNumOfMarmalade());
+        
+        
+        
     }
 
     @Override
@@ -178,38 +186,5 @@ public class Present {
         return string.toString();
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-
-        if (obj == null || obj.getClass() != this.getClass()) {
-            return false;
-        }
-
-        Present other = (Present) obj;
-
-        boolean isEqual = (sweets.size() == other.sweets.size()) && packaging.equals(other.packaging);
-
-        for (int i = 0; isEqual && i < sweets.size(); i++) {
-            if (!sweets.get(i).equals(other.sweets.get(i))) {
-                isEqual = false;
-                break;
-            }
-        }
-
-        return isEqual;
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-
-        result = prime * result + packaging.hashCode();
-        result = prime * result + sweets.hashCode();
-
-        return result;
-    }
+    
 }

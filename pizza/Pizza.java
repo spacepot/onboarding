@@ -42,7 +42,7 @@ public class Pizza
 	public void total()								//Method for order summary.
 	{
 
-		// boolean Tveg = false;
+		
 		
 		String newLine = System.getProperty("line.separator");			//Initialize "newLine" to enter a newline when entered in a system.out statement.
 		System.out.print("\t---------------------------------" + newLine);	//Prints top border.

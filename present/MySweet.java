@@ -61,31 +61,6 @@ public class MySweet implements Sweet {
         return String.format("%15s %10s %10s", name, weight, price);
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-
-        if (obj == null || obj.getClass() != this.getClass()) {
-            return false;
-        }
-
-        MySweet other = (MySweet) obj;
-
-        return name.equals(other.name) && (price == other.price) && (weight == other.weight);
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((name == null) ? 0 : name.hashCode());
-        result = prime * result + Double.hashCode(price);
-        result = prime * result + Double.hashCode(weight);
-        return result;
-    }
-
     protected void setName(String name) {
         if (isValidString(name)) {
             this.name = name;
