@@ -182,8 +182,9 @@ public class Present {
         }
 
         string.append(packaging.toString());
-
+        
         return string.toString();
+        
     }
 
     
