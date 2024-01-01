@@ -26,7 +26,8 @@ public abstract class Electricity {
         {  
             billToPay = 100*1.20+200*2+(units - 300)*3;  
         }  
-        System.out.println("Bill to pay:" + billToPay); 
+        System.out.println("\n");
+        System.out.println("Total Bill to pay:" + billToPay); 
         // returned result  
         return billToPay; 
         
